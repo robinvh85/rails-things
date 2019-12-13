@@ -1,0 +1,22 @@
+<legend>Thing</legend>
+<p>
+  <%= link_to 'Create Random thing', things_create_random_path %> |
+  <%= link_to 'Destroy All', things_destroy_all_path %> |
+  <%= link_to 'Refresh', root_path %>
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @things.each do |thing| %>
+      <tr>
+        <td><%= thing.name %></td>
+        <td><%= thing.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
