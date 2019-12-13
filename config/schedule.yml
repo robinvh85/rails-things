@@ -1,0 +1,5 @@
+# Setup schedule for job
+generate_random_thing:
+  cron: "*/10 * * * *"
+  class: "GenerateRandomThingJob"
+  queue: default

@@ -4,8 +4,7 @@ class ThingsController < ApplicationController
   end
 
   def create_random
-    thing = Thing.first
-    GenerateRandomThingJob.set(wait: 10.seconds).perform_later(thing)
+    GenerateRandomThingJob.set(wait: 10.seconds).perform_later
     redirect_to action: :index
   end
 

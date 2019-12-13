@@ -1,9 +1,8 @@
 class GenerateRandomThingJob < ApplicationJob
   queue_as :default
 
-  def perform(obj)
+  def perform
     puts 'GenerateRandomThingJob - PERFORM'
-    p obj
     sleep 5
     thing = Thing.new
     thing.name = Faker::Name.last_name
