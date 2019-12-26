@@ -1,6 +1,8 @@
+include Pagy::Backend
+
 class ThingsController < ApplicationController
   def index
-    @things = Thing.all()
+    @pagy, @things = pagy(Thing.all)
   end
 
   def create_random
