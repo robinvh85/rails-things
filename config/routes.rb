@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   root to: 'things#index'
 
+  get 'things/index_ajax'
   get 'things/create_random'
   get 'things/destroy_all'
 end
