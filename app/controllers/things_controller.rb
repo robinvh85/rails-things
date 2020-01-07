@@ -1,6 +1,12 @@
+include Pagy::Backend
+
 class ThingsController < ApplicationController
   def index
-    @things = Thing.all()
+    @pagy, @things = pagy(Thing.all)
+  end
+
+  def index_ajax
+    @pagy, @things = pagy(Thing.all, link_extra: 'data-remote="true"')
   end
 
   def create_random
