@@ -18,4 +18,18 @@ class ThingsController < ApplicationController
     Thing.all.destroy_all
     redirect_to action: :index
   end
+
+  def cookie_show
+    cookies[:normal_cookie] = 'normal cookie'
+    cookies.permanent[:demo_permanent] = 'permanent cookie'
+    cookies.encrypted[:demo_encrypted] = 'encrypted cookie'
+    cookies.signed[:demo_signed] = 'signed cookie'
+    cookies[:demo_httponly] = {value: 'http only', expires: Time.current + 1.hour, httponly: true}
+
+    # SameSite
+    cookies[:demo_samesite_lax] = {value: 'SameSite Lax', expires: Time.current + 2.hour, same_site: :lax}
+    cookies[:demo_samesite_strict] = {value: 'SameSite Strict', expires: Time.current + 2.hour, same_site: :strict}
+
+    session[:user_id] = 100
+  end
 end

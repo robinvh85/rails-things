@@ -18,5 +18,7 @@ module RailsThings
 
     config.active_job.queue_adapter = :sidekiq
     # config.active_job.queue_adapter = Rails.env.production? ? :sidekiq : :async
+
+    config.hosts << 'vhwiki'
   end
 end

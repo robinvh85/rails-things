@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get 'things/index_ajax'
   get 'things/create_random'
   get 'things/destroy_all'
+  get 'things/cookie_show'
 end
